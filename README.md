@@ -2,13 +2,17 @@
 
 **Solve P-11.70 (page 534) - Using an AVL tree.**
 
-Write a program that performs a simple n-body simulation, called “Jumping Leprechauns.” This simulation involves n leprechauns, numbered 1 to n. It maintains a gold value gi for each leprechaun i, which begins with each leprechaun starting out with a million dollars worth of gold, that is, gi = 1,000,000 for each i = 1, 2, . . . , n.
+This simulation involves n leprechauns, numbered 1 to n. It maintains a gold value gi for each leprechaun i, which begins with each leprechaun starting out with a million dollars worth of gold, that is, g<sub>i</sub> = 1,000,000 for each i = 1, 2, . . . , n.
 
-In addition, the simulation also maintains, for each leprechaun, i, a place on the horizon, which is represented as a double-precision floating-point number, xi. In each iteration of the simulation, the simulation processes the leprechauns in order from 1 to n. Initially, xi is calculated as xi = 1000000*r , where *r is a random floating-point number between −1 and 1*.
+In addition, the simulation also maintains, for each leprechaun, i, a place on the horizon, which is represented as a double-precision floating-point number, xi. In each iteration of the simulation, the simulation processes the leprechauns in order from 1 to n. Initially, xi is calculated as x<sub>i</sub> = 1000000*r , where *r is a random floating-point number between −1 and 1*.
 
-Processing a leprechaun i during this iteration begins by computing a new place on the horizon for i, which is determined by the assignment xi = xi + rgi , where r is a random floating-point number between −1 and 1. The leprechaun i then steals half the gold from the nearest leprechauns on either side of him on the horizon and adds this gold to his gold value, gi.
+Processing a leprechaun i during this iteration begins by computing a new place on the horizon for i, which is determined by the assignment x<sub>i</sub> = x<sub>i</sub> + rg<sub>i</sub> , where r is a random floating-point number between −1 and 1. The leprechaun i then steals half the gold from the nearest leprechauns on either side of him on the horizon and adds this gold to his gold value, g<sub>i</sub>.
 
-Write a program that can perform a series of iterations in this simulation for a given number, n, of leprechauns. You must maintain the set of horizon positions using an AVL tree data structure with the horizon positions as the key. Then you can use the before() and after() methods to look at the horizon positions. The corresponding value for the key-value pair of the AVL node could be an object that stores the leprechaun number and its gold value.
+Write a program that can perform a series of iterations in this simulation for a given number, n, of leprechauns. 
+
+* You must maintain the set of horizon positions using an AVL tree data structure with the horizon positions as the key. 
+* Implement before() and after() methods to look at the horizon positions. **These will need to be added to the AVL tree**
+* The corresponding value for the key-value pair of the AVL node could be an object that stores the leprechaun number and its gold value. **You will need to modify the AVL tree**
 
 You do not need to write the AVL tree implementation. It is included in this repository.
 
